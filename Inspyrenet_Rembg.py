@@ -100,7 +100,7 @@ class InspyrenetRembgBlack:
             remover = Remover(jit=True)
         img_list = []
         for img in tqdm(image, "Inspyrenet Rembg"):
-            mid = remover.process(tensor2pil(img), type=[0,0,0])
+            mid = remover.process(tensor2pil(img), type='[0,0,0]')
             out =  pil2tensor(mid)
             img_list.append(out)
         img_stack = torch.cat(img_list, dim=0)
